@@ -1,0 +1,48 @@
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        // 1 hour cache for images.
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age3600"
+          }
+        ]
+      },
+      {
+        // For performance, as per React docs.
+        "source": "index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=259200"
+          }
+        ]
+      },
+      {
+        // For performance, as per React docs.
+        "source": "build/static",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      }
+    ]
+  }
+}

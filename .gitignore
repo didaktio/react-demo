@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# files only for live version at https://react.didakt.io
+.firebase
+.firebase.json
+.firebaserc

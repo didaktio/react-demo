@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+.product {
+    border-bottom: 1px solid purple;
+    padding: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product__header {
+    display: flex;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product__header * {
+    margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.product__price {
+    padding-left: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.product__body {
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (min-width: 600px) {
+    .product__body {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.ImageSlider {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    padding: 8px;
+    text-align: center;
+}
+
+.product__images {
+    width: 20%;
+    height: 150px;
+}
+
+.product__image {
+    width: 200px;
+    min-height: 115px;
+    border-radius: 10px;
+}
+
+.ImageSlider__arrow {
+    align-self: center;
+    cursor: pointer;
+}
+
+.ImageSlider__arrow:hover {
+    background: whitesmoke;
+    border-radius: 10px;
+}
+
+.product__tags {
+    font-size: 0.8em;
+    font-weight: 300;
+    color: grey;
+}
+
+.ProductVariants {
+    overflow-x: auto;
+}
+
+.product__variants-button-container {
+    text-align: center;
+}
+
+.product__variants-button-container button {
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid rgba(128, 0, 128, 0.474);
+    border-radius: 5px;
+}
+
+.product__variants-button-container button:hover {
+    background-color: rgba(128, 0, 128, 0.042);
+}
+
+.product__variants {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-variant__title {
+    margin: 0;
+    padding: 8px 0;
+}
+
+.product-variant {
+    padding: 0 8px;
+}
+
+.product-variant__body {
+    font-size: 12px;
+}
+
+.Img {
+    position: relative;
+}
+
+.Img__loading, .Img__broken {
+    z-index: -10;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.code {
+  font-size: 0.9em;
 }

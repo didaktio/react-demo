@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# React Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React demo using [Hooks](https://reactjs.org/docs/hooks-intro.html), [Functional Components](https://reactjs.org/docs/components-and-props.html), and [Custom Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/).
 
-## Available Scripts
+Because common sense, it's React *[with TypeScript](https://create-react-app.dev/docs/adding-typescript/)*.
 
-In the project directory, you can run:
+Also demonstrated:
+* BEM [(Block, Element, Modifier)](https://en.bem.info/methodology/quick-start/)
+* Lazy-loading (using [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API))
+* Custom image slider
+* Testing with [Cypress](https://www.cypress.io/)
 
-### `yarn start`
+*LIVE*: https://react.didakt.io
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
+1) Clone or download the repo into a fresh folder on your machine.
+2) Run `npm install` from the project root to install dependencies.
+3) Run `npm start` to start the development server.
+4) Edit/break/improve/add to the code, starting with the `App.tsx` file.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## TODO?
+* [Server-Side Rendering](https://www.freecodecamp.org/news/server-side-rendering-your-react-app-in-three-simple-steps-7a82b95db82e/).
+* Implement [Custom Hooks](https://reactjs.org/docs/hooks-custom.html) where useful.
+* Add tests for ensuring image slider works.
 
-### `yarn test`
+## Testing
+Run `npm run test`, which concurrently starts a dev server at `http://localhost:3001` and opens [Cypress](https://www.cypress.io/) in a separate window. In Cypress, click the `main.spec.js` file to begin the tests. Adding tests is very
+[straightforward](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Write-your-first-test).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Troubleshooting
+* Typescript complaints about `--jsx flags` and incompatible versions &mdash; Try:
+    * Ensuring your using the latest and/or compatible versions of React and TypeScript.
+    * Set ts server to use local version of TypeScript, via command palette.
+    * Restarting your IDE.
+    * If using VSCode, [restart the ts server](https://stackoverflow.com/questions/47700939/how-to-reset-intellisense-in-vs-code/55212141).
+* `Argument for '--jsx' option must be: 'preserve', 'react-native', 'react'.ts` &mdash; Ignore it.
+* If Cypress complains about the server not being live, ensure your app is loading at `http://localhost:3001`. Then try again.
+Sometimes the dev server is too slow for Cypress. If this problem persists, perform the two automated steps manually: run `npm start`, wait for the server to load, then `npm run cypress:open`.
